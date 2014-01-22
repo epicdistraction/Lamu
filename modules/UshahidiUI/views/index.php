@@ -23,7 +23,7 @@
 		    <link rel="stylesheet" href="<?php echo Media::url('css/plugins/leaflet.ie.css'); ?>" />
 				<link rel="stylesheet" type="text/css" href="<?php echo Media::url('js/libs/leaflet-locatecontrol/src/L.Control.Locate.ie.css'); ?>"/>
 		<![endif]-->
-
+<?php echo Kohana::find_file('media', 'leaflet', '.css'); ?>
 		<!--Change to app.min.css for production-->
 		<?php if (Kohana::$environment == Kohana::PRODUCTION): ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo Media::url('css/style.css'); ?>"/>
@@ -36,9 +36,10 @@
 		  (function() {
 		    window.config = <?php echo json_encode($site); ?>;
 		  })();
+		
 		</script>
+		<!--<script type="text/javascript" src="<?php echo Media::url('js/app/libs/dropzone.js'); ?>"></script>-->
 		<!-- end global site config -->
-
 		<!--Change to Init.min.js below for production-->
 		<?php if (Kohana::$environment == Kohana::PRODUCTION): ?>
 		<script type="text/javascript" src="<?php echo Media::url('js/app/config/Init.min.js'); ?>"></script>
@@ -54,7 +55,6 @@
 			<script type="text/javascript" src="js/vendor/selectivizr/selectivizr.js"></script>
 			<noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
 		<![endif]-->
-
 		<!-- Google Font -->
 		<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
